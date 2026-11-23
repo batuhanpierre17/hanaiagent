@@ -1,0 +1,119 @@
+:root {
+  --bg: #0c1220;
+  --paper: #eef2f8;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--paper);
+  overflow: hidden;
+}
+
+body {
+  font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.stage {
+  position: relative;
+  height: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+/* Yassı görünüş: WebGL yoksa veya hareket kapalıysa */
+.flat {
+  position: relative;
+  z-index: 1;
+}
+
+body.gl .flat { display: none; }
+
+.mark {
+  position: relative;
+  width: min(420px, 78vw);
+  aspect-ratio: 868 / 772;
+  margin-top: -8vh;
+}
+
+.part {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lines {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 9vh;
+  height: 10rem;
+  z-index: 2;
+  perspective: 760px;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: min(38rem, calc(100vw - 48px));
+  text-align: center;
+  font-size: clamp(23px, 3.3vw, 40px);
+  font-weight: 500;
+  line-height: 1.26;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  transform-style: preserve-3d;
+}
+
+.w {
+  display: inline-block;
+  white-space: pre;
+  transform-origin: 50% 100%;
+}
+
+@media (max-width: 700px) {
+  .mark { width: min(300px, 86vw); margin-top: -4vh; }
+  .lines { height: 9.5rem; bottom: 7vh; }
+  .line { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line { opacity: 1; }
+  .lines {
+    position: relative;
+    bottom: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0 24px 8vh;
+    perspective: none;
+  }
+  .line { position: relative; width: auto; }
+}

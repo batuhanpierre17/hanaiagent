@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hanai Agent</title>
+  <meta name="description" content="Hanai Agent bir yapay zeka platformu. Günlük ve tekrarlayan işini tek pencerede yapar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css?v=11" />
+</head>
+<body>
+  <main class="stage">
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div class="flat" aria-hidden="true">
+      <div class="mark">
+        <img class="part h" src="brand/h.png" alt="" />
+        <img class="part face" src="brand/face.png" alt="" />
+        <img class="part word" src="brand/word.png" alt="" />
+      </div>
+    </div>
+    <h1 class="sr">Hanai Agent</h1>
+    <div class="lines">
+      <p class="line">Bir yapay zeka platformu.</p>
+      <p class="line">Günlük ve tekrarlayan işini tek pencerede yapar.</p>
+      <p class="line">Bilmediği işi sorar, kaydeder, sonraki sefere kendisi yapar.</p>
+      <p class="line">Verileriniz sizinle ve güvende.</p>
+    </div>
+  </main>
+  <script src="gsap.min.js"></script>
+  <script src="three.min.js"></script>
+  <script src="scene.js?v=11"></script>
+  <script src="site.js?v=11"></script>
+</body>
+</html>
